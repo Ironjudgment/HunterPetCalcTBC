@@ -1,0 +1,1345 @@
+<HTML>
+<HEAD>
+<script>
+
+// Edited by Ironjudgment 28/03/2019
+// Added:
+// 	Cobra Reflexes
+// 	Avoidance
+
+
+	var selectedCost = 0;
+
+	var skill = new Array(134);
+	var rank = new Array(134);
+	var cost = new Array(134);
+	var level = new Array(134);
+	
+	var Bite = new Array(9);
+	var Charge = new Array(6);
+	var Claw = new Array(9);
+	var Cower = new Array(7);
+	var Dash = new Array(3);
+	var Dive = new Array(3);
+	var Fire_Breath = new Array(2);
+	var Furious_Howl = new Array(4);
+	var Gore = new Array(9);
+	var Growl = new Array(8);
+	var Lightning_Breath = new Array(6);
+	var Poison_Spit = new Array(3);
+	var Prowl = new Array(3);
+	var Scorpid_Poison = new Array(5);
+	var Screech = new Array(5);
+	var Shell_Shield = new Array(1);
+	var Thunderstomp = new Array(3);
+	var Warp = new Array(1);
+	var Great_Stamina = new Array(11);
+	var Natural_Armor = new Array(11);
+	var Arcane_Resist = new Array(5);
+	var Fire_Resist = new Array(5);
+	var Frost_Resist = new Array(5);
+	var Nature_Resist = new Array(5);
+	var Shadow_Resist = new Array(5);
+	var Cobra_Reflexes = new Array(1);
+	var Avoidance = new Array(2);
+	
+	skill[0] = 'Bite';
+	skill[1] = 'Bite';
+	skill[2] = 'Bite';
+	skill[3] = 'Bite';
+	skill[4] = 'Bite';
+	skill[5] = 'Bite';
+	skill[6] = 'Bite';
+	skill[7] = 'Bite';
+	skill[8] = 'Bite';
+	skill[9] = 'Charge';
+	skill[10] = 'Charge';
+	skill[11] = 'Charge';
+	skill[12] = 'Charge';
+	skill[13] = 'Charge';
+	skill[14] = 'Charge';
+	skill[15] = 'Claw';
+	skill[16] = 'Claw';
+	skill[17] = 'Claw';
+	skill[18] = 'Claw';
+	skill[19] = 'Claw';
+	skill[20] = 'Claw';
+	skill[21] = 'Claw';
+	skill[22] = 'Claw';
+	skill[23] = 'Claw';
+	skill[24] = 'Cower';
+	skill[25] = 'Cower';
+	skill[26] = 'Cower';
+	skill[27] = 'Cower';
+	skill[28] = 'Cower';
+	skill[29] = 'Cower';
+	skill[30] = 'Cower';
+	skill[31] = 'Dash';
+	skill[32] = 'Dash';
+	skill[33] = 'Dash';
+	skill[34] = 'Dive';
+	skill[35] = 'Dive';
+	skill[36] = 'Dive';
+	skill[37] = 'Fire_Breath';
+	skill[38] = 'Fire_Breath';
+	skill[39] = 'Furious_Howl';
+	skill[40] = 'Furious_Howl';
+	skill[41] = 'Furious_Howl';
+	skill[42] = 'Furious_Howl';
+	skill[43] = 'Gore';
+	skill[44] = 'Gore';
+	skill[45] = 'Gore';
+	skill[46] = 'Gore';
+	skill[47] = 'Gore';
+	skill[48] = 'Gore';
+	skill[49] = 'Gore';
+	skill[50] = 'Gore';
+	skill[51] = 'Gore';
+	skill[52] = 'Growl';
+	skill[53] = 'Growl';
+	skill[54] = 'Growl';
+	skill[55] = 'Growl';
+	skill[56] = 'Growl';
+	skill[57] = 'Growl';
+	skill[58] = 'Growl';
+	skill[59] = 'Growl';
+	skill[60] = 'Lightning_Breath';
+	skill[61] = 'Lightning_Breath';
+	skill[62] = 'Lightning_Breath';
+	skill[63] = 'Lightning_Breath';
+	skill[64] = 'Lightning_Breath';
+	skill[65] = 'Lightning_Breath';
+	skill[66] = 'Poison_Spit';
+	skill[67] = 'Poison_Spit';
+	skill[68] = 'Poison_Spit';
+	skill[69] = 'Prowl';
+	skill[70] = 'Prowl';
+	skill[71] = 'Prowl';
+	skill[72] = 'Scorpid_Poison';
+	skill[73] = 'Scorpid_Poison';
+	skill[74] = 'Scorpid_Poison';
+	skill[75] = 'Scorpid_Poison';
+	skill[76] = 'Scorpid_Poison';
+	skill[77] = 'Screech';
+	skill[78] = 'Screech';
+	skill[79] = 'Screech';
+	skill[80] = 'Screech';
+	skill[81] = 'Screech';
+	skill[82] = 'Shell_Shield';
+	skill[83] = 'Thunderstomp';
+	skill[84] = 'Thunderstomp';
+	skill[85] = 'Thunderstomp';
+	skill[86] = 'Warp';
+	skill[87] = 'Great_Stamina';
+	skill[88] = 'Great_Stamina';
+	skill[89] = 'Great_Stamina';
+	skill[90] = 'Great_Stamina';
+	skill[91] = 'Great_Stamina';
+	skill[92] = 'Great_Stamina';
+	skill[93] = 'Great_Stamina';
+	skill[94] = 'Great_Stamina';
+	skill[95] = 'Great_Stamina';
+	skill[96] = 'Great_Stamina';
+	skill[97] = 'Great_Stamina';
+	skill[98] = 'Natural_Armor';
+	skill[99] = 'Natural_Armor';
+	skill[100] = 'Natural_Armor';
+	skill[101] = 'Natural_Armor';
+	skill[102] = 'Natural_Armor';
+	skill[103] = 'Natural_Armor';
+	skill[104] = 'Natural_Armor';
+	skill[105] = 'Natural_Armor';
+	skill[106] = 'Natural_Armor';
+	skill[107] = 'Natural_Armor';
+	skill[108] = 'Natural_Armor';
+	skill[109] = 'Arcane_Resist';
+	skill[110] = 'Arcane_Resist';
+	skill[111] = 'Arcane_Resist';
+	skill[112] = 'Arcane_Resist';
+	skill[113] = 'Arcane_Resist';
+	skill[114] = 'Fire_Resist';
+	skill[115] = 'Fire_Resist';
+	skill[116] = 'Fire_Resist';
+	skill[117] = 'Fire_Resist';
+	skill[118] = 'Fire_Resist';
+	skill[119] = 'Frost_Resist';
+	skill[120] = 'Frost_Resist';
+	skill[121] = 'Frost_Resist';
+	skill[122] = 'Frost_Resist';
+	skill[123] = 'Frost_Resist';
+	skill[124] = 'Nature_Resist';
+	skill[125] = 'Nature_Resist';
+	skill[126] = 'Nature_Resist';
+	skill[127] = 'Nature_Resist';
+	skill[128] = 'Nature_Resist';
+	skill[129] = 'Shadow_Resist';
+	skill[130] = 'Shadow_Resist';
+	skill[131] = 'Shadow_Resist';
+	skill[132] = 'Shadow_Resist';
+	skill[133] = 'Shadow_Resist';
+	skill[134] = 'Cobra_Reflexes';
+	skill[135] = 'Avoidance';
+	skill[136] = 'Avoidance';
+
+	
+	rank[0] = 1;
+	rank[1] = 2;
+	rank[2] = 3;
+	rank[3] = 4;
+	rank[4] = 5;
+	rank[5] = 6;
+	rank[6] = 7;
+	rank[7] = 8;
+	rank[8] = 9;
+	rank[9] = 1;
+	rank[10] = 2;
+	rank[11] = 3;
+	rank[12] = 4;
+	rank[13] = 5;
+	rank[14] = 6;
+	rank[15] = 1;
+	rank[16] = 2;
+	rank[17] = 3;
+	rank[18] = 4;
+	rank[19] = 5;
+	rank[20] = 6;
+	rank[21] = 7;
+	rank[22] = 8;
+	rank[23] = 9;
+	rank[24] = 1;
+	rank[25] = 2;
+	rank[26] = 3;
+	rank[27] = 4;
+	rank[28] = 5;
+	rank[29] = 6;
+	rank[30] = 7;
+	rank[31] = 1;
+	rank[32] = 2;
+	rank[33] = 3;
+	rank[34] = 1;
+	rank[35] = 2;
+	rank[36] = 3;
+	rank[37] = 1;
+	rank[38] = 2;
+	rank[39] = 1;
+	rank[40] = 2;
+	rank[41] = 3;
+	rank[42] = 4;
+	rank[43] = 1;
+	rank[44] = 2;
+	rank[45] = 3;
+	rank[46] = 4;
+	rank[47] = 5;
+	rank[48] = 6;
+	rank[49] = 7;
+	rank[50] = 8;
+	rank[51] = 9;
+	rank[52] = 1;
+	rank[53] = 2;
+	rank[54] = 3;
+	rank[55] = 4;
+	rank[56] = 5;
+	rank[57] = 6;
+	rank[58] = 7;
+	rank[59] = 8;
+	rank[60] = 1;
+	rank[61] = 2;
+	rank[62] = 3;
+	rank[63] = 4;
+	rank[64] = 5;
+	rank[65] = 6;
+	rank[66] = 1;
+	rank[67] = 2;
+	rank[68] = 3;
+	rank[69] = 1;
+	rank[70] = 2;
+	rank[71] = 3;
+	rank[72] = 1;
+	rank[73] = 2;
+	rank[74] = 3;
+	rank[75] = 4;
+	rank[76] = 5;
+	rank[77] = 1;
+	rank[78] = 2;
+	rank[79] = 3;
+	rank[80] = 4;
+	rank[81] = 5;
+	rank[82] = 1;
+	rank[83] = 1;
+	rank[84] = 2;
+	rank[85] = 3;
+	rank[86] = 1;
+	rank[87] = 1;
+	rank[88] = 2;
+	rank[89] = 3;
+	rank[90] = 4;
+	rank[91] = 5;
+	rank[92] = 6;
+	rank[93] = 7;
+	rank[94] = 8;
+	rank[95] = 9;
+	rank[96] = 10;
+	rank[97] = 11;
+	rank[98] = 1;
+	rank[99] = 2;
+	rank[100] = 3;
+	rank[101] = 4;
+	rank[102] = 5;
+	rank[103] = 6;
+	rank[104] = 7;
+	rank[105] = 8;
+	rank[106] = 9;
+	rank[107] = 10;
+	rank[108] = 11;
+	rank[109] = 1;
+	rank[110] = 2;
+	rank[111] = 3;
+	rank[112] = 4;
+	rank[113] = 5;
+	rank[114] = 1;
+	rank[115] = 2;
+	rank[116] = 3;
+	rank[117] = 4;
+	rank[118] = 5;
+	rank[119] = 1;
+	rank[120] = 2;
+	rank[121] = 3;
+	rank[122] = 4;
+	rank[123] = 5;
+	rank[124] = 1;
+	rank[125] = 2;
+	rank[126] = 3;
+	rank[127] = 4;
+	rank[128] = 5;
+	rank[129] = 1;
+	rank[130] = 2;
+	rank[131] = 3;
+	rank[132] = 4;
+	rank[133] = 5;
+	rank[134] = 1;  /// Cobra_Reflexes Rank 1
+	rank[135] = 1;  /// Avoidance Rank 1
+	rank[136] = 2;  /// Avoidance Rank 2
+	
+
+	cost[0] = 1;
+	cost[1] = 4;
+	cost[2] = 7;
+	cost[3] = 10;
+	cost[4] = 13;
+	cost[5] = 17;
+	cost[6] = 21;
+	cost[7] = 25;
+	cost[8] = 29;
+	cost[9] = 5;
+	cost[10] = 9;
+	cost[11] = 13;
+	cost[12] = 17;
+	cost[13] = 21;
+	cost[14] = 25;
+	cost[15] = 1;
+	cost[16] = 4;
+	cost[17] = 7;
+	cost[18] = 10;
+	cost[19] = 13;
+	cost[20] = 17;
+	cost[21] = 21;
+	cost[22] = 25;
+	cost[23] = 29;
+	cost[24] = 8;
+	cost[25] = 10;
+	cost[26] = 12;
+	cost[27] = 14;
+	cost[28] = 16;
+	cost[29] = 18;
+	cost[30] = 21;
+	cost[31] = 15;
+	cost[32] = 20;
+	cost[33] = 25;
+	cost[34] = 15;
+	cost[35] = 20;
+	cost[36] = 25;
+	cost[37] = 5;
+	cost[38] = 25;
+	cost[39] = 10;
+	cost[40] = 15;
+	cost[41] = 20;
+	cost[42] = 25;
+	cost[43] = 1;
+	cost[44] = 4;
+	cost[45] = 7;
+	cost[46] = 10;
+	cost[47] = 13;
+	cost[48] = 17;
+	cost[49] = 21;
+	cost[50] = 25;
+	cost[51] = 29;
+	cost[52] = 0;
+	cost[53] = 0;
+	cost[54] = 0;
+	cost[55] = 0;
+	cost[56] = 0;
+	cost[57] = 0;
+	cost[58] = 0;
+	cost[59] = 0;
+	cost[60] = 1;
+	cost[61] = 5;
+	cost[62] = 10;
+	cost[63] = 15;
+	cost[64] = 20;
+	cost[65] = 25;
+	cost[66] = 5;
+	cost[67] = 20;
+	cost[68] = 25;
+	cost[69] = 15;
+	cost[70] = 20;
+	cost[71] = 25;
+	cost[72] = 10;
+	cost[73] = 15;
+	cost[74] = 20;
+	cost[75] = 25;
+	cost[76] = 29;
+	cost[77] = 10;
+	cost[78] = 15;
+	cost[79] = 20;
+	cost[80] = 25;
+	cost[81] = 29;
+	cost[82] = 15;
+	cost[83] = 15;
+	cost[84] = 20;
+	cost[85] = 25;
+	cost[86] = 1;
+	cost[87] = 5;
+	cost[88] = 10;
+	cost[89] = 15;
+	cost[90] = 25;
+	cost[91] = 50;
+	cost[92] = 75;
+	cost[93] = 100;
+	cost[94] = 125;
+	cost[95] = 150;
+	cost[96] = 185;
+	cost[97] = 215;
+	cost[98] = 1;
+	cost[99] = 5;
+	cost[100] = 10;
+	cost[101] = 15;
+	cost[102] = 25;
+	cost[103] = 50;
+	cost[104] = 75;
+	cost[105] = 100;
+	cost[106] = 125;
+	cost[107] = 150;
+	cost[108] = 175;
+	cost[109] = 5;
+	cost[110] = 15;
+	cost[111] = 45;
+	cost[112] = 90;
+	cost[113] = 105;
+	cost[114] = 5;
+	cost[115] = 15;
+	cost[116] = 45;
+	cost[117] = 90;
+	cost[118] = 105;
+	cost[119] = 5;
+	cost[120] = 15;
+	cost[121] = 45;
+	cost[122] = 90;
+	cost[123] = 105;
+	cost[124] = 5;
+	cost[125] = 15;
+	cost[126] = 45;
+	cost[127] = 90;
+	cost[128] = 105;
+	cost[129] = 5;
+	cost[130] = 15;
+	cost[131] = 45;
+	cost[132] = 90;
+	cost[133] = 105;
+	cost[134] = 15;  /// Cobra_Reflexes Rank 1
+	cost[135] = 15;  /// Avoidance Rank 1
+	cost[136] = 25;  /// Avoidance Rank 2
+
+	level[0] = 1;
+	level[1] = 8;
+	level[2] = 16;
+	level[3] = 24;
+	level[4] = 32;
+	level[5] = 40;
+	level[6] = 48;
+	level[7] = 56;
+	level[8] = 64;
+	level[9] = 1;
+	level[10] = 12;
+	level[11] = 24;
+	level[12] = 36;
+	level[13] = 48;
+	level[14] = 60;
+	level[15] = 1;
+	level[16] = 8;
+	level[17] = 16;
+	level[18] = 24;
+	level[19] = 32;
+	level[20] = 40;
+	level[21] = 48;
+	level[22] = 56;
+	level[23] = 64;
+	level[24] = 5;
+	level[25] = 15;
+	level[26] = 25;
+	level[27] = 35;
+	level[28] = 45;
+	level[29] = 55;
+	level[30] = 65;
+	level[31] = 30;
+	level[32] = 40;
+	level[33] = 50;
+	level[34] = 30;
+	level[35] = 40;
+	level[36] = 50;
+	level[37] = 1;
+	level[38] = 60;
+	level[39] = 10;
+	level[40] = 24;
+	level[41] = 40;
+	level[42] = 56;
+	level[43] = 1;
+	level[44] = 8;
+	level[45] = 16;
+	level[46] = 24;
+	level[47] = 32;
+	level[48] = 40;
+	level[49] = 48;
+	level[50] = 56;
+	level[51] = 63;
+	level[52] = 1;
+	level[53] = 10;
+	level[54] = 20;
+	level[55] = 30;
+	level[56] = 40;
+	level[57] = 50;
+	level[58] = 60;
+	level[59] = 70;
+	level[60] = 1;
+	level[61] = 12;
+	level[62] = 24;
+	level[63] = 36;
+	level[64] = 48;
+	level[65] = 60;
+	level[66] = 15;
+	level[67] = 45;
+	level[68] = 60;
+	level[69] = 30;
+	level[70] = 40;
+	level[71] = 50;
+	level[72] = 8;
+	level[73] = 24;
+	level[74] = 40;
+	level[75] = 56;
+	level[76] = 64;
+	level[77] = 8;
+	level[78] = 24;
+	level[79] = 48;
+	level[80] = 56;
+	level[81] = 64;
+	level[82] = 20;
+	level[83] = 30;
+	level[84] = 40;
+	level[85] = 50;
+	level[86] = 60;
+	level[87] = 10;
+	level[88] = 12;
+	level[89] = 18;
+	level[90] = 24;
+	level[91] = 30;
+	level[92] = 36;
+	level[93] = 42;
+	level[94] = 48;
+	level[95] = 54;
+	level[96] = 60;
+	level[97] = 70;
+	level[98] = 10;
+	level[99] = 12;
+	level[100] = 18;
+	level[101] = 24;
+	level[102] = 30;
+	level[103] = 36;
+	level[104] = 42;
+	level[105] = 48;
+	level[106] = 54;
+	level[107] = 60;
+	level[108] = 70;
+	level[109] = 20;
+	level[110] = 30;
+	level[111] = 40;
+	level[112] = 50;
+	level[113] = 60;
+	level[114] = 20;
+	level[115] = 30;
+	level[116] = 40;
+	level[117] = 50;
+	level[118] = 60;
+	level[119] = 20;
+	level[120] = 30;
+	level[121] = 40;
+	level[122] = 50;
+	level[123] = 60;
+	level[124] = 20;
+	level[125] = 30;
+	level[126] = 40;
+	level[127] = 50;
+	level[128] = 60;
+	level[129] = 20;
+	level[130] = 30;
+	level[131] = 40;
+	level[132] = 50;
+	level[133] = 60;
+	level[134] = 30;	/// Cobra_Reflexes Rank 1
+	level[135] = 30;	/// Avoidance Rank 1
+	level[136] = 60;	/// Avoidance Rank 2
+	
+	
+
+
+
+	Bite[0] = '';
+	Bite[1] = 'Bite the enemy, causing 7 to 9 damage';
+	Bite[2] = 'Bite the enemy, causing 16 to 18 damage.';
+	Bite[3] = 'Bite the enemy, causing 24 to 28 damage.';
+	Bite[4] = 'Bite the enemy, causing 31 to 37 damage.';
+	Bite[5] = 'Bite the enemy, causing 40 to 48 damage.';
+	Bite[6] = 'Bite the enemy, causing 49 to 59 damage.';
+	Bite[7] = 'Bite the enemy, causing 66 to 80 damage.';
+	Bite[8] = 'Bite the enemy, causing 81 to 99 damage.';
+	Bite[9] = 'Bite the enemy, causing 108 to 132 damage.';
+	
+	Charge[0] = '';
+	Charge[1] = 'Charges an enemy, immobilizes it for 1 sec, and adds 50 melee attack power to the boar\'s next attack.';
+	Charge[2] = 'Charges an enemy, immobilizes it for 1 sec, and adds 100 melee attack power to the boar\'s next attack.';
+	Charge[3] = 'Charges an enemy, immobilizes it for 1 sec, and adds 180 melee attack power to the boar\'s next attack.';
+	Charge[4] = 'No known creatures have this skill when tamed.';
+	Charge[5] = 'Charges an enemy, immobilizes it for 1 sec, and adds 390 melee attack power to the boar\'s next attack.';
+	Charge[6] = 'Charges an enemy, immobilizes it for 1 sec, and adds 550 melee attack power to the boar\'s next attack.';
+
+	Claw[0] = '';
+	Claw[1] = 'Claw the enemy, causing 4 to 6 damage.';
+	Claw[2] = 'Claw the enemy, causing 8 to 12 damage.';
+	Claw[3] = 'Claw the enemy, causing 12 to 16 damage.';
+	Claw[4] = 'Claw the enemy, causing 16 to 22 damage.';
+	Claw[5] = 'Claw the enemy, causing 21 to 29 damage.';
+	Claw[6] = 'Claw the enemy, causing 26 to 36 damage.';
+	Claw[7] = 'Claw the enemy, causing 35 to 49 damage.';
+	Claw[8] = 'Claw the enemy, causing 43 to 59 damage.';
+	Claw[9] = 'Claw the enemy, causing 54 to 76 damage.';
+	
+	Cower[0] = '';
+	Cower[1] = 'Decreases threat';
+	Cower[2] = 'Decreases threat';
+	Cower[3] = 'Decreases threat';
+	Cower[4] = 'Decreases threat';
+	Cower[5] = 'Decreases threat';
+	Cower[6] = 'Decreases threat';
+	Cower[7] = 'Decreases threat';
+
+	Dash[0] = '';
+	Dash[1] = 'Increases movement speed by 40 for 15 seconds.';
+	Dash[2] = 'Increases movement speed by 60 for 15 seconds.';
+	Dash[3] = 'Increases movement speed by 80 for 15 seconds.';
+
+	Dive[0] = '';
+	Dive[1] = 'Increases movement speed by 40 for 15 seconds.';
+	Dive[2] = 'Increases movement speed by 60 for 15 seconds.';
+	Dive[3] = 'Increases movement speed by 80 for 15 seconds.';
+	
+	Fire_Breath[0] = '';
+	Fire_Breath[1] = 'Targets in a cone in front of the caster take 6 Fire damage over 2 sec.';
+	Fire_Breath[2] = 'Targets in a cone in front of the caster take 111 Fire damage over 2 sec.';
+
+	Furious_Howl[0] = '';
+	Furious_Howl[1] = 'Party members within range receive an extra 9-11 damage to their next attack. Lasts 10 seconds.';
+	Furious_Howl[2] = 'Party members within range receive an extra 18-22 damage to their next attack. Lasts 10 seconds.';
+	Furious_Howl[3] = 'Party members within range receive an extra 28-34 damage to their next attack. Lasts 10 seconds.';
+	Furious_Howl[4] = 'Party members within range receive an extra 45-57 damage to their next attack. Lasts 10 seconds.';
+
+	Gore[0] = '';
+	Gore[1] = 'Gores the enemy, causing 3 to 5 damage. This attack has a 50% chance to inflict double damage.';
+	Gore[2] = 'Gores the enemy, causing 6 to 10 damage. This attack has a 50% chance to inflict double damage.';
+	Gore[3] = 'Gores the enemy, causing 9 to 13 damage. This attack has a 50% chance to inflict double damage.';
+	Gore[4] = 'Gores the enemy, causing 12 to 18 damage. This attack has a 50% chance to inflict double damage.';
+	Gore[5] = 'No known creatures have this skill when tamed.';
+	Gore[6] = 'No known creatures have this skill when tamed.';
+	Gore[7] = 'Gores the enemy, causing 24 to 40 damage. This attack has a 50% chance to inflict double damage.';
+	Gore[8] = 'Gores the enemy, causing 30 to 48 damage. This attack has a 50% chance to inflict double damage.';
+	Gore[9] = 'Gores the enemy, causing 37 to 61 damage. This attack has a 50% chance to inflict double damage.';
+
+	Growl[0] = '';
+	Growl[1] = 'Taunts the target';
+	Growl[2] = 'Taunts the target';
+	Growl[3] = 'Taunts the target';
+	Growl[4] = 'Taunts the target';
+	Growl[5] = 'Taunts the target';
+	Growl[6] = 'Taunts the target';
+	Growl[7] = 'Taunts the target';
+	Growl[8] = 'Taunts the target';
+	
+	Lightning_Breath[0] = '';
+	Lightning_Breath[1] = 'Breathes lightning, instantly dealing 11 to 13 Nature damage to a single target.';
+	Lightning_Breath[2] = 'Breathes lightning, instantly dealing 21 to 23 Nature damage to a single target.';
+	Lightning_Breath[3] = 'Breathes lightning, instantly dealing 36 to 40 Nature damage to a single target.';
+	Lightning_Breath[4] = 'Breathes lightning, instantly dealing 51 to 59 Nature damage to a single target.';
+	Lightning_Breath[5] = 'Breathes lightning, instantly dealing 78 to 90 Nature damage to a single target.';
+	Lightning_Breath[6] = 'Breathes lightning, instantly dealing 99 to 113 Nature damage to a single target.';
+	
+	Poison_Spit[0] = '';
+	Poison_Spit[1] = 'Spits poison at an enemy, dealing 25 Nature damage over 8 sec. ';
+	Poison_Spit[2] = 'Spits poison at an enemy, dealing 90 Nature damage over 8 sec. ';
+	Poison_Spit[3] = 'Spits poison at an enemy, dealing 120 Nature damage over 8 sec. ';
+
+	Prowl[0] = '';
+	Prowl[1] = 'Stealths pet, reducing movement speed to 50% of normal. The first attack breaking stealth does 120% of normal damage.';
+	Prowl[2] = 'Stealths pet, reducing movement speed to 55% of normal. The first attack breaking stealth does 135% of normal damage.';
+	Prowl[3] = 'Stealths pet, reducing movement speed to 60% of normal. The first attack breaking stealth does 150% of normal damage.';
+
+	Scorpid_Poison[0] = '';
+	Scorpid_Poison[1] = 'Inflicts 10 Nature damage over 10 sec.  Stacks up to 5 times.';
+	Scorpid_Poison[2] = 'Inflicts 15 Nature damage over 10 sec.  Stacks up to 5 times.';
+	Scorpid_Poison[3] = 'Inflicts 30 Nature damage over 10 sec.  Stacks up to 5 times';
+	Scorpid_Poison[4] = 'Inflicts 40 Nature damage over 10 sec.  Stacks up to 5 times.';
+	Scorpid_Poison[5] = 'Inflicts 44 Nature damage over 8 sec.  Stacks up to 5 times.';
+
+	Screech[0] = '';
+	Screech[1] = 'Blasts single enemy for 7 to 9 damage and lowers the attack power of enemies in range by 25. Effect lasts 4 seconds.';
+	Screech[2] = 'Blasts single enemy for 12 to 16 damage and lowers the attack power of enemies in range by 50. Effect lasts 4 seconds.';
+	Screech[3] = 'Blasts single enemy for 19 to 25 damage and lowers the attack power of enemies in range by 75. Effect lasts 4 seconds.';
+	Screech[4] = 'Blasts single enemy for 26 to 46 damage and lowers the attack power of enemies in range by 100. Effect lasts 4 seconds.';
+	Screech[5] = 'Blasts single enemy for 33 to 61 damage and lowers the attack power of enemies in range by 100. Effect lasts 4 seconds.';
+
+	Shell_Shield[0] = '';
+	Shell_Shield[1] = 'Reduces all damage your pet takes by 50%, but increases the time between your pet\'s attacks by 43%. Lasts 12 sec.';
+
+	Thunderstomp[0] = '';
+	Thunderstomp[1] = 'Shakes the ground with thundering force, doing 67 to 77 Nature damage to all enemies within 8 yards.';
+	Thunderstomp[2] = 'Shakes the ground with thundering force, doing 87 to 99 Nature damage to all enemies within 8 yards.';
+	Thunderstomp[3] = 'Shakes the ground with thundering force, doing 115 to 133 Nature damage to all enemies within 8 yards.';
+
+	Warp[0] = '';
+	Warp[1] = 'Teleports to an enemy up to 30 yards away and gives the pet a 50% chance to avoid the next melee attack. Lasts 4 sec.';
+
+	Great_Stamina[0] = '';
+	Great_Stamina[1] = 'Increases stamina by 3';
+	Great_Stamina[2] = 'Increases stamina by 5';
+	Great_Stamina[3] = 'Increases stamina by 7';
+	Great_Stamina[4] = 'Increases stamina by 10';
+	Great_Stamina[5] = 'Increases stamina by 13';
+	Great_Stamina[6] = 'Increases stamina by 17';
+	Great_Stamina[7] = 'Increases stamina by 21';
+	Great_Stamina[8] = 'Increases stamina by 26';
+	Great_Stamina[9] = 'Increases stamina by 32';
+	Great_Stamina[10] = 'Increases stamina by 40';
+	Great_Stamina[11] = 'Increases stamina by 64';
+
+	Natural_Armor[0] = '';
+	Natural_Armor[1] = 'Increases armor by 50';
+	Natural_Armor[2] = 'Increases armor by 100';
+	Natural_Armor[3] = 'Increases armor by 160';
+	Natural_Armor[4] = 'Increases armor by 240';
+	Natural_Armor[5] = 'Increases armor by 330';
+	Natural_Armor[6] = 'Increases armor by 430';
+	Natural_Armor[7] = 'Increases armor by 550';
+	Natural_Armor[8] = 'Increases armor by 675';
+	Natural_Armor[9] = 'Increases armor by 810';
+	Natural_Armor[10] = 'Increases armor by 1000';
+	Natural_Armor[11] = 'Increases armor by 1600';
+
+	Arcane_Resist[0] = '';
+	Arcane_Resist[1] = 'Increases Arcane Resistance by 30';
+	Arcane_Resist[2] = 'Increases Arcane Resistance by 60';
+	Arcane_Resist[3] = 'Increases Arcane Resistance by 90';
+	Arcane_Resist[4] = 'Increases Arcane Resistance by 120';
+	Arcane_Resist[5] = 'Increases Arcane Resistance by 140';
+
+	Fire_Resist[0] = '';
+	Fire_Resist[1] = 'Increases Fire Resistance by 30';
+	Fire_Resist[2] = 'Increases Fire Resistance by 60';
+	Fire_Resist[3] = 'Increases Fire Resistance by 90';
+	Fire_Resist[4] = 'Increases Fire Resistance by 120';
+	Fire_Resist[5] = 'Increases Fire Resistance by 140';
+
+	Frost_Resist[0] = '';
+	Frost_Resist[1] = 'Increases Frost Resistance by 30';
+	Frost_Resist[2] = 'Increases Frost Resistance by 60';
+	Frost_Resist[3] = 'Increases Frost Resistance by 90';
+	Frost_Resist[4] = 'Increases Frost Resistance by 120';
+	Frost_Resist[5] = 'Increases Frost Resistance by 140';
+
+	Nature_Resist[0] = '';
+	Nature_Resist[1] = 'Increases Nature Resistance by 30';
+	Nature_Resist[2] = 'Increases Nature Resistance by 60';
+	Nature_Resist[3] = 'Increases Nature Resistance by 90';
+	Nature_Resist[4] = 'Increases Nature Resistance by 120';
+	Nature_Resist[5] = 'Increases Nature Resistance by 140';
+
+	Shadow_Resist[0] = '';
+	Shadow_Resist[1] = 'Increases Shadow Resistance by 30';
+	Shadow_Resist[2] = 'Increases Shadow Resistance by 60';
+	Shadow_Resist[3] = 'Increases Shadow Resistance by 90';
+	Shadow_Resist[4] = 'Increases Shadow Resistance by 120';
+	Shadow_Resist[5] = 'Increases Shadow Resistance by 140';
+		
+	Cobra_Reflexes[0] = '';
+	Cobra_Reflexes[1] = 'Attack speed increased by 30%, but damage done is reduced.';
+
+	Avoidance[0] = '';
+	Avoidance[1] = 'Reduces the damage your pet takes from area of effect attacks by an additional 25%';
+	Avoidance[2] = 'Reduces the damage your pet takes from area of effect attacks by an additional 50%';
+
+
+	
+	
+	function buildPage()
+	{
+		document.pet.points.value = (document.pet.petlevel.value)*(document.pet.loyalty.value-1);
+		var currentSkill = '';
+		var rank0 = true;
+		var out = '';
+		var i;
+		for (i=0; i < skill.length; i++)
+		{
+			if (skill[i] != currentSkill)
+			{
+				if (currentSkill != '')
+					out += '</select><td><input type="text" size="100" name="d' + skill[i-1] + '"></td></tr>\n';
+				currentSkill = skill[i];
+				rank0 = true;
+			}
+			if (rank0)
+			{
+				out += '<tr><td align="right">' + skill[i].replace(/_/," ") + ':</td><td align="left">' +
+					'<select name="s' + skill[i] + '" style="width: 220px;" onfocus="selectedCost = this.value*1;" ' +
+					'onchange="selectedLevel = this.options[this.selectedIndex].text.replace(/^.*Level ([0-9]*)\\)/,\'$1\'); document.pet.points.value = document.pet.points.value*1 + selectedCost - this.value*1; selectedCost = this.value*1; if ( selectedLevel > document.pet.petlevel.value*1 ) {document.pet.d' + skill[i] + '.value = \'Level not high enough!\';}else {document.pet.d' + skill[i] + '.value = ' + skill[i] + '[this.selectedIndex]; }">\n<option value="0">0 (0pts)</option>\n';
+				rank0 = false;
+			}
+				out += '<option value="' + cost[i] + '">' + rank[i] + ' (' + cost[i] + 'pts) (Level ' + level[i] + ')</option>\n';
+		}
+		out += '</select></td><td><input type="text" size="100" name="d' + skill[i-1] + '"></td></tr>\n';
+		document.write(out);
+	}
+	
+	function print()
+	{
+		var buildOut = '';
+		buildOut += 'Pet Level: ' + document.pet.petlevel.value + '\nPet Loyalty: ' + document.pet.loyalty.value + '\nPoints Available: ' + (document.pet.petlevel.value)*(document.pet.loyalty.value-1) + '\n\n';
+		
+		for (var i=0; i<document.pet.elements.length; i++)
+		{
+		
+			if (document.pet.elements[i].type == 'select-one' && document.pet.elements[i].selectedIndex != 0)
+			{
+				buildOut += document.pet.elements[i].name.substring(1).replace(/_/," ") + ' - rank ' + document.pet.elements[i].selectedIndex + ' (' + document.pet.elements[i].options[document.pet.elements[i].selectedIndex].value + 'pts)';
+				if ( document.pet.elements[i].options[document.pet.elements[i].selectedIndex].text.replace(/^.*Level ([0-9]*)\)/,'$1')*1 > document.pet.petlevel.value*1 ) {
+					buildOut += ' Level not high enough!';
+				}
+				
+				buildOut += '\n';
+			}
+				
+		}
+		buildOut += '\nTotal spent: ' + ((document.pet.petlevel.value)*(document.pet.loyalty.value-1) - document.pet.points.value*1);
+		buildOut += '\nPoints Left: ' + document.pet.points.value + '\n';
+		document.pet.output.value = buildOut;
+	}
+	
+	function calcpoints ()
+	{
+		if ( document.pet.petlevel.value < 1 || document.pet.petlevel.value > 70 ) {
+			alert("Pet level must be between 1 and 70!");
+			
+		}
+		
+		if ( document.pet.loyalty.value < 1 || document.pet.loyalty.value > 6 ) {
+			alert ("Pet loyalty must be between 1 and 6!");
+		}
+		var newPoints = (document.pet.petlevel.value)*(document.pet.loyalty.value-1);
+		
+		for (i=0; i<document.pet.elements.length; i++)
+		{
+			if (document.pet.elements[i].type == 'select-one' && document.pet.elements[i].selectedIndex != 0)
+			{
+				newPoints -= document.pet.elements[i].options[document.pet.elements[i].selectedIndex].value;
+				if ( document.pet.elements[i].options[document.pet.elements[i].selectedIndex].text.replace(/^.*Level ([0-9]*)\)/,'$1') > document.pet.petlevel.value ) {
+					eval('document.pet.d' + document.pet.elements[i].name.substring(1)).value = 'Level not high enough!';
+				}	
+				else {
+					eval('document.pet.d' + document.pet.elements[i].name.substring(1)).value 	= eval(document.pet.elements[i].name.substring(1))[document.pet.elements[i].selectedIndex];
+				}
+			}			
+		}
+		
+		
+		document.pet.points.value = newPoints;
+		document.pet.output.value = '';
+		
+	}
+
+</script>
+</HEAD>
+
+<body><!--'"</title></head>-->
+
+<script type="text/javascript">
+//OwnerIQ
+var __oiq_pct = 50;
+if( __oiq_pct>=100 || Math.floor(Math.random()*100/(100-__oiq_pct)) > 0 ) {
+var _oiqq = _oiqq || [];
+_oiqq.push(['oiq_addPageBrand','Lycos']);
+_oiqq.push(['oiq_addPageCat','Internet > Websites']);
+_oiqq.push(['oiq_addPageLifecycle','Intend']);
+_oiqq.push(['oiq_doTag']);
+(function() {
+var oiq = document.createElement('script'); oiq.type = 'text/javascript'; oiq.async = true;
+oiq.src = document.location.protocol + '//px.owneriq.net/stas/s/lycosn.js';
+var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(oiq, s);
+})();
+}
+//Google Analytics
+var _gaq = _gaq || [];
+_gaq.push(['_setAccount','UA-21402695-19']);
+_gaq.push(['_setDomainName','tripod.com']);
+_gaq.push(['_setCustomVar',1,'member_name','petcalc',3]);
+_gaq.push(['_trackPageview']);
+(function() {
+var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+})();
+//Lycos Init
+function getReferrer() {
+var all= this.document.cookie;
+if (all== '') return false;
+var cookie_name = 'REFERRER=';
+var start = all.lastIndexOf(cookie_name);
+if (start == -1) return false;
+start += cookie_name.length;
+var end = all.indexOf(';', start);
+if (end == -1) end = all.length;
+return all.substring(start, end);
+}
+function getQuery() {
+var rfr = getReferrer();
+if (rfr == '') return false;
+var q = extractQuery(rfr, 'yahoo.com', 'p=');
+if (q) return q;
+q = extractQuery(rfr, '', 'q=');
+return q ? q : "";
+}
+function extractQuery(full, site, q_param) {
+var start = full.lastIndexOf(site);
+if (start == -1) return false;
+start = full.lastIndexOf(q_param);
+if (start == -1) return false;
+start += q_param.length;
+var end = full.indexOf('&', start);
+if (end == -1) end = full.length;
+return unescape(full.substring(start, end)).split(" ").join("+");
+}
+function generateHref(atag, template){
+atag.href=template.replace('_MYURL_', window.location.href.replace('http://', '')).replace('_MYTITLE_','Check%20out%20this%20Tripod%20Member%20site!'); 
+}
+var lycos_ad = Array();
+var lycos_onload_timer;
+var cm_role = "live";
+var cm_host = "tripod.lycos.com";
+var cm_taxid = "/memberembedded";
+var tripod_member_name = "petcalc";
+var tripod_member_page = "petcalc/index.htm";
+var tripod_ratings_hash = "1553792138:4d11df9b91212a0b464658a11783a80f";
+
+var lycos_ad_category = null;
+
+var lycos_ad_remote_addr = "92.232.148.121";
+var lycos_ad_www_server = "www.tripod.lycos.com";
+var lycos_ad_track_small = "http://members.tripod.com/adm/img/common/ot_smallframe.gif?rand=984928";
+var lycos_ad_track_served = "http://members.tripod.com/adm/img/common/ot_adserved.gif?rand=984928";
+var lycos_search_query = getQuery();
+</script>
+
+<script type="text/javascript" src="http://scripts.lycos.com/catman/init.js"></script>
+
+<script type='text/javascript'>
+ var googletag = googletag || {};
+ googletag.cmd = googletag.cmd || [];
+ (function() {
+   var gads = document.createElement('script');
+   gads.async = true;
+   gads.type = 'text/javascript';
+   var useSSL = 'https:' == document.location.protocol;
+   gads.src = (useSSL ? 'https:' : 'http:') +
+     '//www.googletagservices.com/tag/js/gpt.js';
+   var node = document.getElementsByTagName('script')[0];
+   node.parentNode.insertBefore(gads, node);
+ })();
+</script>
+
+<script type='text/javascript'>
+ googletag.cmd.push(function() {
+   googletag.defineSlot('/95963596/TRI_300X250_dfp', [300, 250], 'div-gpt-ad-1450204159126-0').addService(googletag.pubads());
+   googletag.defineSlot('/95963596/TRI_above_728x90_dfp', [728, 90], 'div-gpt-ad-1450204159126-1').addService(googletag.pubads());
+   googletag.defineSlot('/95963596/TRI_below_728x90_dfp', [728, 90], 'div-gpt-ad-1450204159126-2').addService(googletag.pubads());
+   googletag.pubads().enableSingleRequest();
+   googletag.enableServices();
+ });
+</script>
+
+
+<script type="text/javascript"> 
+(function(isV)
+{
+    if( !isV )
+    {
+        return;
+    }
+    var adMgr = new AdManager();
+    var lycos_prod_set = adMgr.chooseProductSet();
+    var slots = ["leaderboard", "leaderboard2", "toolbar_image", "toolbar_text", "smallbox", "top_promo", "footer2", "slider"];
+    var adCat = this.lycos_ad_category;
+    adMgr.setForcedParam('page', (adCat && adCat.dmoz) ? adCat.dmoz : 'member');
+    if (this.lycos_search_query)
+    {
+        adMgr.setForcedParam("keyword", this.lycos_search_query);
+    } 
+    else if(adCat && adCat.find_what)
+    {
+        adMgr.setForcedParam('keyword', adCat.find_what);
+    }
+    
+    for (var s in slots)
+    {
+        var slot = slots[s];
+        if (adMgr.isSlotAvailable(slot))
+        {
+            this.lycos_ad[slot] = adMgr.getSlot(slot);
+        }
+    }
+
+    adMgr.renderHeader();
+    adMgr.renderFooter();
+}((function() {
+
+var w = 0, h = 0, minimumThreshold = 300;
+
+if (top == self)
+{
+    return true;
+}
+if (typeof(window.innerWidth) == 'number' )
+{
+    w = window.innerWidth;
+    h = window.innerHeight;
+}
+else if (document.documentElement && (document.documentElement.clientWidth || document.documentElement.clientHeight))
+{
+    w = document.documentElement.clientWidth;
+    h = document.documentElement.clientHeight;
+}
+else if (document.body && (document.body.clientWidth || document.body.clientHeight))
+{
+    w = document.body.clientWidth;
+    h = document.body.clientHeight;
+}
+return ((w > minimumThreshold) && (h > minimumThreshold));
+}())));
+
+
+
+
+window.onload = function()
+{
+    var f = document.getElementById("FooterAd");
+    var b = document.getElementsByTagName("body")[0];
+    b.appendChild(f);
+    f.style.display = "block";
+    document.getElementById('lycosFooterAdiFrame').src = '/adm/ad/footerAd.iframe.html';
+    
+
+
+    
+    // DOM Inj Ad
+    (function(isTrellix)
+    {
+        var e = document.createElement('iframe');
+        e.style.border = '0';
+        e.style.margin = 0;
+        e.style.display = 'block';
+        e.style.cssFloat = 'right';
+        e.style.height = '254px';
+        e.style.overflow = 'hidden';
+        e.style.padding = 0;
+        e.style.width = '300px';
+
+
+        var isBlokedByDomain = function( href )
+        {
+            var blockedDomains = [
+                "ananyaporn13000.tripod.com",
+                "xxxpornxxx.tripod.com"
+            ];
+            var flag = false;
+            
+            for( var i=0; i<blockedDomains.length; i++ )
+            {
+                if( href.search( blockedDomains[ i ] ) >= 0 )
+                {
+                    flag = true;
+                }
+            }
+            return flag;
+        }
+
+        var getMetaContent = function( metaName )
+        {
+            var metas = document.getElementsByTagName('meta');
+            for (i=0; i<metas.length; i++)
+            { 
+                if( metas[i].getAttribute("name") == metaName )
+                { 
+                    return metas[i].getAttribute("content"); 
+                } 
+            }
+            return false;
+        }
+        
+        var getCommentNodes = function(regexPattern)
+        {
+            var nodes = {};
+            var nodesA = [];
+            var preferredNodesList = ['a', 'c', 'b'];
+        
+            (function getNodesThatHaveComments(n, pattern)
+            {
+                if (n.hasChildNodes())
+                {
+                    if (n.tagName === 'IFRAME')
+                    {
+                        return false;
+                    }
+                    for (var i = 0; i < n.childNodes.length; i++)
+                    {
+                        if ((n.childNodes[i].nodeType === 8) && (pattern.test(n.childNodes[i].nodeValue)))
+                        {
+                            var areaName = pattern.exec(n.childNodes[i].nodeValue)[1];
+                            nodes[areaName] = n;
+                        }
+                        else if (n.childNodes[i].nodeType === 1)
+                        {
+                            getNodesThatHaveComments(n.childNodes[i], pattern);
+                        }
+                    }
+                }
+            }(document.body, regexPattern));
+
+            for (var i in preferredNodesList)
+            {
+                if (nodes[preferredNodesList[i]])
+                {
+                    if( isTrellix && nodes[preferredNodesList[i]].parentNode.parentNode.parentNode.parentNode )
+                    {
+                        nodesA.push(nodes[preferredNodesList[i]].parentNode.parentNode.parentNode.parentNode);
+                    }
+                    else
+                    {
+                        nodesA.push( nodes[preferredNodesList[i]] );
+                    }
+                }
+            }
+            return nodesA;
+        }
+        
+        
+        var properNode = null;
+        var areaNodes = getCommentNodes( new RegExp( '^area Type="area_(\\w+)"' ) );
+
+        for (var i = 0; i < areaNodes.length; i++)
+        {
+            var a = parseInt(getComputedStyle(areaNodes[i]).width);
+            if ((a >= 300) && (a <= 400))
+            {
+                properNode = areaNodes[i];
+                break;
+            }
+        }
+
+
+        var propertyName = getMetaContent("property") || false;
+        if( isTrellix && (properNode) )
+        {
+            e.src = '/adm/ad/injectAd.iframe.html';
+            properNode.insertBefore(e, properNode.firstChild);
+        }
+        else if( isTrellix && !( properNode ) ) // Slap the ad eventhought there is no alocated slot
+        {
+            e.src = '/adm/ad/injectAd.iframe.html';
+            e.style.cssFloat = 'none';
+            var cdiv = document.createElement('div');
+            cdiv.style = "width:300px;margin:10px auto;";
+            cdiv.appendChild( e );
+            b.insertBefore(cdiv, b.lastChild);
+        }
+        else if( !isBlokedByDomain( location.href ) )
+        {
+            var injF = document.createElement('iframe');
+            injF.style.border = '0';
+            injF.style.margin = 0;
+            injF.style.display = 'block';
+            injF.style.cssFloat = 'none';
+            injF.style.height = '254px';
+            injF.style.overflow = 'hidden';
+            injF.style.padding = 0;
+            injF.style.width = '300px';
+            injF.src = '/adm/ad/injectAd.iframe.html';
+
+            if( b && ( !isTrellix || ( typeof isTrellix == "undefined" ) ) ) // All other tripod props
+            {
+                var cdiv = document.createElement('div');
+                cdiv.style = "width:300px;margin:10px auto;";
+                cdiv.appendChild( injF );
+                b.insertBefore(cdiv, b.lastChild);
+            } 
+        }
+  }( document.isTrellix ));
+}
+
+</script>
+
+<div id="tb_container" style="background:#DFDCCF; border-bottom:1px solid #393939; position:relative; z-index:999999999!important">
+<!--form name="search" onSubmit="return searchit()" id='header_search' >
+<input type="text" placeholder="Search" size=30 name="search2" value="">
+<input type="button" value="Go!" onClick="searchit()">
+</form>
+<style>
+form#header_search {
+    width: 916px;
+    margin: 0 auto 8px;
+    position: relative;
+}
+
+
+form#header_search input {
+    height: 40px;
+    font-size: 14px;
+    line-height: 40px;
+    padding: 0 8px;
+    box-sizing: border-box;
+    background: #F4F2E9;
+    border: 1px solid #BBB8B8;
+    transition: background-color 300ms ease-out,
+                color 300ms ease;
+}
+
+form#header_search input[type="text"] {
+    width: 100%;
+}
+form#header_search input[type="text"]:focus {
+    border-color: #A2D054;
+    background-color: #fff;
+    box-shadow: 0 0px 12px -4px #A2D054;
+}
+
+
+
+form#header_search input[type="button"] {
+    position: absolute;
+    top: 1px;
+    right: 1px;
+    opacity: 1;
+    background: #DFDCCF;
+    color: #463734;
+    width: 125px;
+    cursor: pointer;
+    height: 38px;
+    border: none;
+}
+form#header_search input[type="text"]:focus ~ input[type='button']:hover,
+form#header_search input[type='button']:hover {
+    background-color: #A5CE56;
+    color: #fff;
+}
+form#header_search input[type="text"]:focus ~ input[type='button'] {
+    background-color: #52AEDF;
+    color: #fff;
+}
+
+</style>
+
+<script>
+function searchit(){
+    
+    // determine environment 
+    var search_env 
+    if (lycos_ad_www_server.indexOf(".pd.") > -1) {
+       search_env = 'http://search51.pd.lycos.com/a/';
+    } else if (lycos_ad_www_server.indexOf(".qa.") > -1) {
+       search_env = 'http://search51.qa.lycos.com/a/';
+    } else {
+       search_env = 'http://search51.lycos.com/a/';
+    }
+
+var search_term = encodeURIComponent(document.search.search2.value)
+var search_url = search_env+search_term;
+window.open(search_url);
+
+return false
+}
+</script-->
+<style>
+    .adCenterClass{margin:0 auto}
+</style>
+<div id="tb_ad" class="adCenterClass" style="display:block!important; overflow:hidden; width:916px;">
+<a href="http://adtrack.ministerial5.com/clicknew/?a=637394" title="build your own website at Tripod.com" style="float:left; width:186px; border:0">
+<img src="http://ly.lygo.com/ly/tpSite/images/freeAd2.jpg" alt="Make your own free website on Tripod.com" style="border:0; display:block" />
+</a> 
+
+<div id="ad_container" style="display:block!important; float:left; width:728px ">
+<script type="text/javascript">
+if (typeof lycos_ad !== "undefined" && "leaderboard" in lycos_ad) {
+  document.write(lycos_ad['leaderboard']);
+}
+</script>
+</div>
+</div>
+</div>
+<script type="text/javascript">
+if (typeof lycos_ad !== "undefined" && "slider" in lycos_ad) {
+  document.write(lycos_ad['slider']);
+}
+</script> <!-- added 7/22 -->
+<div id="FooterAd" style="background:#DFDCCF; border-top:1px solid #393939; clear:both; display:none; width:100%!important; position:relative; z-index:999999!important; height:90px!important"> 
+<div class="adCenterClass" style="display:block!important; overflow:hidden; width:916px;">
+<a href="http://adtrack.ministerial5.com/clicknew/?a=637394" title="build your own website at Tripod.com" style="float:left; display:block; width:186px; border:0">
+<img src="http://ly.lygo.com/ly/tpSite/images/freeAd2.jpg" alt="Make your own free website on Tripod.com" style="border:0; display:block; " />
+</a> 
+<div id="footerAd_container" style="display:block!important; float:left; width:728px">
+<iframe id="lycosFooterAdiFrame" style="border:0; display:block; float:left; height:96px; overflow:hidden; padding:0; width:750px"></iframe>
+</div>
+</div>
+</div>
+
+
+<FORM name="pet">
+<p align="center"><b><font color="70b06c" size="6">Pet Training Calculator for 2.4.3</font><br /> by Rocket (Magtheridon) -- Retired -- UPDATED by Ironjudgment to 2.4.3 (Burning Legion)<br /></p>
+<b>Pet level:</b><input type="text" name="petlevel" value="70" onChange="calcpoints()" /><br /><br />
+
+<b>Loyalty:</b><input type="text" name="loyalty" value="6" onChange="calcpoints()"  /><br /><br />
+<b>Training Points left:</b><input type="text" name="points" readonly /><br /><br />
+<table>
+  <script>document.write(buildPage());</script>
+</table>
+<input type="button" name="Reset" value="Reset" onclick="location.reload()" /><br />
+<br />
+Print your pet build so you can post it in forums:<br />
+<input type="button" value="Print" onclick="print();" /><br />
+<textarea name="output" rows="12" cols="50"></textarea><br />
+<!-- ...and paste your pet build here for comments from other hunters:<br />
+<a href="http://forums.worldofwarcraft.com/thread.aspx?ForumName=wow-hunter&ThreadID=686018">Official Pet Calculator Thread</a> -->
+</body>
+</FORM>
+
+</HTML>
