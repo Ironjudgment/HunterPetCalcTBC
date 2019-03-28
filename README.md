@@ -16,4 +16,4 @@ Original can be found here: http://petcalc.tripod.com
 Changes:
 Added 'Avoidance'
 Added 'Cobra Reflexes'
-Added proper reset button.
+Added proper 'Reset' button.
